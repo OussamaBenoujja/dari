@@ -1,0 +1,38 @@
+tirelire-api/
+├── src/
+│   ├── config/                 # Configuration files (DB, JWT secrets, env)
+│   │   └── db.js
+│   │   └── jwt.js
+│   ├── controllers/            # Controllers handle HTTP requests/responses
+│   │   ├── userController.js
+│   │   ├── groupController.js
+│   │   └── contributionController.js
+│   ├── models/                 # MongoDB models + OOP methods
+│   │   ├── User.js
+│   │   ├── Group.js
+│   │   └── Contribution.js
+│   ├── services/               # Business logic encapsulated in classes
+│   │   ├── UserService.js
+│   │   ├── GroupService.js
+│   │   └── PaymentService.js
+│   ├── middlewares/            # Auth, validation, error handling
+│   │   ├── auth.js
+│   │   └── errorHandler.js
+│   ├── routes/                 # Routes mapping endpoints to controllers
+│   │   ├── userRoutes.js
+│   │   ├── groupRoutes.js
+│   │   └── contributionRoutes.js
+│   ├── utils/                  # Helper functions (validators, formatters)
+│   │   └── validator.js
+│   └── app.js                  # Express app entry point
+├── tests/                      # Jest tests for models, services, controllers
+│   ├── user.test.js
+│   ├── group.test.js
+│   └── contribution.test.js
+├── .env                        # Environment variables
+├── package.json
+├── package-lock.json
+├── Dockerfile
+├── docker-compose.yml
+├── jest.config.js
+└── README.md

@@ -1,0 +1,47 @@
+{
+  "name": "tirelire",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "jest"
+  },
+  "author": "Oussama Benoujja",
+  "license": "ISC",
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^4.17.0",
+    "@vladmandic/face-api": "^1.7.15",
+    "bcrypt": "^5.1.1",
+    "canvas": "^3.2.0",
+    "corn": "^0.0.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mongodb-memory-server": "^10.2.3",
+    "mongoose": "^8.19.1",
+    "node-cron": "^4.2.1",
+    "stripe": "^19.1.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "axios": "^1.7.7",
+    "jsonwebtoken": "^9.0.2",
+    "jwks-rsa": "^3.1.0"
+  },
+  "optionalDependencies": {},
+  "overrides": {},
+  "pnpm": {},
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OussamaBenoujja/tirelire.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OussamaBenoujja/tirelire/issues"
+  },
+  "homepage": "https://github.com/OussamaBenoujja/tirelire#readme",
+  "description": "TireLire is a Collaborative Saving APP Inspired from the Moroccan culture of 'Dart'",
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}

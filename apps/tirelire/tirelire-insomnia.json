@@ -1,0 +1,57 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-10-24T00:00:00.000Z",
+  "__export_source": "tirelire-insomnia",
+  "resources": [
+    {
+      "_id": "wrk_1",
+      "parentId": null,
+      "modified": 0,
+      "created": 0,
+      "name": "Tirelire API",
+      "description": "All endpoints for Tirelire project",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_1",
+      "parentId": "wrk_1",
+      "modified": 0,
+      "created": 0,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:3000/api"
+      },
+      "_type": "environment"
+    },
+    
+    { "_id": "req_1", "parentId": "wrk_1", "name": "Register User", "_type": "request", "method": "POST", "url": "{{ base_url }}/users/register", "body": { "mimeType": "application/json", "text": "{\n  \"first_Name\": \"John\",\n  \"last_Name\": \"Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"adress\": \"123 Main Street\",\n  \"password\": \"StrongPassword123\"\n}" }, "headers": [{ "name": "Content-Type", "value": "application/json" }] },
+    { "_id": "req_2", "parentId": "wrk_1", "name": "Login User", "_type": "request", "method": "POST", "url": "{{ base_url }}/users/login", "body": { "mimeType": "application/json", "text": "{\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"StrongPassword123\"\n}" }, "headers": [{ "name": "Content-Type", "value": "application/json" }] },
+    { "_id": "req_3", "parentId": "wrk_1", "name": "Get Profile", "_type": "request", "method": "GET", "url": "{{ base_url }}/users/me", "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] },
+    { "_id": "req_4", "parentId": "wrk_1", "name": "Submit Verification", "_type": "request", "method": "POST", "url": "{{ base_url }}/users/verification", "body": { "mimeType": "multipart/form-data", "params": [ { "name": "verification_type", "value": "National ID" }, { "name": "verification_id", "value": "AB123456" }, { "name": "verify_card_Image", "type": "file" }, { "name": "verificationSelfie", "type": "file" } ] }, "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] },
+    { "_id": "req_5", "parentId": "wrk_1", "name": "Open Ticket", "_type": "request", "method": "POST", "url": "{{ base_url }}/users/tickets", "body": { "mimeType": "application/json", "text": "{\n  \"subject\": \"Test\",\n  \"message\": \"Help needed\"\n}" }, "headers": [{ "name": "Authorization", "value": "Bearer <token>" }, { "name": "Content-Type", "value": "application/json" }] },
+    { "_id": "req_6", "parentId": "wrk_1", "name": "List My Tickets", "_type": "request", "method": "GET", "url": "{{ base_url }}/users/tickets", "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] },
+    { "_id": "req_7", "parentId": "wrk_1", "name": "List All Tickets (Admin)", "_type": "request", "method": "GET", "url": "{{ base_url }}/users/tickets/all", "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] },
+    { "_id": "req_8", "parentId": "wrk_1", "name": "Respond Ticket (Admin)", "_type": "request", "method": "POST", "url": "{{ base_url }}/users/tickets/{ticketId}/respond", "body": { "mimeType": "application/json", "text": "{\n  \"response\": \"Your issue is resolved\",\n  \"status\": \"closed\"\n}" }, "headers": [{ "name": "Authorization", "value": "Bearer <token>" }, { "name": "Content-Type", "value": "application/json" }] },
+    { "_id": "req_9", "parentId": "wrk_1", "name": "List Notifications", "_type": "request", "method": "GET", "url": "{{ base_url }}/users/notifications", "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] },
+    { "_id": "req_10", "parentId": "wrk_1", "name": "Mark Notifications Read", "_type": "request", "method": "POST", "url": "{{ base_url }}/users/notifications/mark-read", "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] },
+    { "_id": "req_11", "parentId": "wrk_1", "name": "List Manual Verifications (Admin)", "_type": "request", "method": "GET", "url": "{{ base_url }}/users/verification/manual-queue", "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] },
+    { "_id": "req_12", "parentId": "wrk_1", "name": "Manual Verification Review (Admin)", "_type": "request", "method": "POST", "url": "{{ base_url }}/users/verification/{requestId}/manual-review", "body": { "mimeType": "application/json", "text": "{\n  \"decision\": \"approve\",\n  \"notes\": \"ID photo is clear.\"\n}" }, "headers": [{ "name": "Authorization", "value": "Bearer <token>" }, { "name": "Content-Type", "value": "application/json" }] },
+    { "_id": "req_13", "parentId": "wrk_1", "name": "Stripe Onboard", "_type": "request", "method": "POST", "url": "{{ base_url }}/users/stripe/onboard", "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] },
+    { "_id": "req_14", "parentId": "wrk_1", "name": "Stripe Complete", "_type": "request", "method": "GET", "url": "{{ base_url }}/users/stripe/complete", "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] },
+
+    { "_id": "req_15", "parentId": "wrk_1", "name": "List Groups", "_type": "request", "method": "GET", "url": "{{ base_url }}/groups", "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] },
+    { "_id": "req_16", "parentId": "wrk_1", "name": "Create Group", "_type": "request", "method": "POST", "url": "{{ base_url }}/groups", "body": { "mimeType": "application/json", "text": "{\n  \"name\": \"Test Group\",\n  \"contributionAmount\": 100,\n  \"contributionInterval\": \"monthly\"\n}" }, "headers": [{ "name": "Authorization", "value": "Bearer <token>" }, { "name": "Content-Type", "value": "application/json" }] },
+    { "_id": "req_17", "parentId": "wrk_1", "name": "Apply Penalties", "_type": "request", "method": "POST", "url": "{{ base_url }}/groups/actions/apply-penalties", "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] },
+    { "_id": "req_18", "parentId": "wrk_1", "name": "Get Group", "_type": "request", "method": "GET", "url": "{{ base_url }}/groups/{groupId}", "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] },
+    { "_id": "req_19", "parentId": "wrk_1", "name": "Join Group", "_type": "request", "method": "POST", "url": "{{ base_url }}/groups/{groupId}/join", "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] },
+    { "_id": "req_20", "parentId": "wrk_1", "name": "Remove Member", "_type": "request", "method": "DELETE", "url": "{{ base_url }}/groups/{groupId}/members/{memberId}", "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] },
+    { "_id": "req_21", "parentId": "wrk_1", "name": "Start Round", "_type": "request", "method": "POST", "url": "{{ base_url }}/groups/{groupId}/start-round", "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] },
+    { "_id": "req_22", "parentId": "wrk_1", "name": "Get Round History", "_type": "request", "method": "GET", "url": "{{ base_url }}/groups/{groupId}/history", "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] },
+    { "_id": "req_23", "parentId": "wrk_1", "name": "Send Group Message", "_type": "request", "method": "POST", "url": "{{ base_url }}/groups/{groupId}/messages", "body": { "mimeType": "application/json", "text": "{\n  \"content\": \"Hello group!\",\n  \"type\": \"text\"\n}" }, "headers": [{ "name": "Authorization", "value": "Bearer <token>" }, { "name": "Content-Type", "value": "application/json" }] },
+    { "_id": "req_24", "parentId": "wrk_1", "name": "List Group Messages", "_type": "request", "method": "GET", "url": "{{ base_url }}/groups/{groupId}/messages", "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] },
+
+    { "_id": "req_25", "parentId": "wrk_1", "name": "List Contributions by Group", "_type": "request", "method": "GET", "url": "{{ base_url }}/contributions/group/{groupId}", "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] },
+    { "_id": "req_26", "parentId": "wrk_1", "name": "Pay Contribution", "_type": "request", "method": "POST", "url": "{{ base_url }}/contributions/{contributionId}/pay", "headers": [{ "name": "Authorization", "value": "Bearer <token>" }] }
+  ]
+}
