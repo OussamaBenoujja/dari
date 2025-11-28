@@ -1,0 +1,6 @@
+node_modules
+.vscode
+.env
+/out
+apps/darna/out
+apps/keycloak/helper/kcOut
