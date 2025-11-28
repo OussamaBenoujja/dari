@@ -1,0 +1,181 @@
+:root {
+  --ui-radius-xl: 28px;
+  --ui-radius-lg: 20px;
+  --ui-radius-md: 14px;
+  --ui-accent-teal: 199 84% 55%;
+  --ui-accent-orange: 24 95% 60%;
+  --ui-accent-slate: 221 27% 24%;
+  --ui-text-primary: 212 22% 15%;
+  --ui-text-muted: 219 14% 46%;
+  --ui-border: 218 10% 80%;
+}
+
+.ui-button {
+  font:
+    600 1rem/1.2 'Space Grotesk',
+    'Inter',
+    system-ui;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--ui-radius-lg);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    border-color 150ms ease;
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(15, 15, 15, 0.15);
+}
+
+.ui-button:focus-visible {
+  outline: 3px solid hsl(var(--ui-accent-teal) / 0.4);
+  outline-offset: 2px;
+}
+
+.ui-button--solid {
+  color: white;
+}
+
+.ui-button--outline,
+.ui-button--ghost {
+  background: transparent;
+}
+
+.ui-button--outline {
+  border-color: hsl(var(--ui-accent-slate) / 0.4);
+}
+
+.ui-button--ghost {
+  border: none;
+}
+
+.ui-button--teal.ui-button--solid {
+  background: linear-gradient(
+    120deg,
+    hsl(var(--ui-accent-teal)),
+    hsl(var(--ui-accent-teal) / 0.8)
+  );
+}
+
+.ui-button--orange.ui-button--solid {
+  background: linear-gradient(
+    120deg,
+    hsl(var(--ui-accent-orange)),
+    hsl(var(--ui-accent-orange) / 0.8)
+  );
+}
+
+.ui-button--slate.ui-button--solid {
+  background: linear-gradient(
+    120deg,
+    hsl(var(--ui-accent-slate)),
+    hsl(var(--ui-accent-slate) / 0.8)
+  );
+}
+
+.ui-button--teal.ui-button--outline,
+.ui-button--teal.ui-button--ghost {
+  color: hsl(var(--ui-accent-teal));
+}
+
+.ui-button--orange.ui-button--outline,
+.ui-button--orange.ui-button--ghost {
+  color: hsl(var(--ui-accent-orange));
+}
+
+.ui-button--slate.ui-button--outline,
+.ui-button--slate.ui-button--ghost {
+  color: hsl(var(--ui-accent-slate));
+}
+
+.ui-status-card {
+  border-radius: var(--ui-radius-xl);
+  padding: 1.5rem;
+  border: 1px solid hsl(var(--ui-border));
+  background: white;
+  box-shadow: 0 20px 40px rgba(15, 15, 15, 0.08);
+  min-width: 200px;
+}
+
+.ui-status-card--teal {
+  border-color: hsl(var(--ui-accent-teal) / 0.3);
+}
+
+.ui-status-card--orange {
+  border-color: hsl(var(--ui-accent-orange) / 0.3);
+}
+
+.ui-status-card--slate {
+  border-color: hsl(var(--ui-accent-slate) / 0.3);
+}
+
+.ui-status-card__label {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  color: hsl(var(--ui-text-muted));
+  margin: 0 0 0.5rem;
+}
+
+.ui-status-card__value {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: hsl(var(--ui-text-primary));
+  margin: 0;
+}
+
+.ui-status-card__helper {
+  color: hsl(var(--ui-text-muted));
+  margin: 0.35rem 0 0;
+}
+
+.ui-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.ui-section--start {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.ui-section__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.ui-section__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: hsl(var(--ui-text-muted));
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.ui-section__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  margin: 0;
+  color: hsl(var(--ui-text-primary));
+}
+
+.ui-section__description {
+  margin: 0;
+  font-size: 1.15rem;
+  color: hsl(var(--ui-text-muted));
+}
+
+.ui-section__kicker {
+  margin: 0;
+  color: hsl(var(--ui-text-muted));
+}
